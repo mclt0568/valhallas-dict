@@ -1,28 +1,19 @@
 <template>
-  <div id="app">
-    <Header/>
-  </div>
+  <Wrapper/>
 </template>
 
 <script>
-import Header from './components/Header.vue'
+import Wrapper from '@/Wrapper.vue'
 
 export default {
   name: 'App',
   components: {
-    Header,
+    Wrapper
   }
 }
 </script>
 
 <style lang="scss">
-  @import "./styles/carbon";
-  @import "./styles/theme.scss";
-  @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
-
-#app{
-  font-family: "Roboto", sans-serif;
-  min-height: 100vh;
-  background-color: $bg-light;
-}
+@import "./styles/carbon_theme";
+@import "./styles/carbon";
 </style>

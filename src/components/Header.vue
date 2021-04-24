@@ -46,8 +46,8 @@ export default {
 <style scoped lang="scss">
 @import "../styles/theme.scss";
 .display-language-options{
-  height:57px;
-  width:57px;
+  height:3.5rem;
+  width:3.5rem;
   color: $fg-sub;
 }
 .display-language-options.selected{
@@ -58,7 +58,7 @@ export default {
   padding-left:8px;
 }
 #header-bar{
-  height:57px;
+  height:3.5rem;
   background: $bg-dark;
 }
 #header-name{
@@ -66,7 +66,11 @@ export default {
   padding-left: 15px;
   display:block;
   margin-top:auto;
-  // padding-top:2px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+}
+#header-name>div{
+  min-width: 265px;
 }
 #header-name>#vel-name{
   font-family: "Marcellus", serif;
