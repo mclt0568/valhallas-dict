@@ -9,15 +9,16 @@
       <!-- <cv-header-menu-item href="/repos">Repositories</cv-header-menu-item> -->
       <cv-text-input
         id="word-search"
-        invalidText="A valid value is required"
-        labelText="Text input label"
+        invalidText=""
         :placeholder=searchPlaceholder
       />
       <cv-dropdown
         ariaLabel="Dropdown"
+        :placeholder=searchLanguageOptionPlaceholder
         id="search-language-options"
         :items=searchLanguageOptions
-        titleText="Dropdown title"
+        
+        titleText="awa"
       />
     </cv-header-nav>
     <template slot="header-global">
@@ -35,6 +36,7 @@ export default {
   props: {},
   data(){return{
     searchPlaceholder: "Enter a Word",
+    searchLanguageOptionPlaceholder: "Select a language",
     searchLanguageOptions: ["Valhallas to English","Valhallas to Traditional Chinese","Valhallas to Simplified Chinese","Chinese to Valhallas","English to Valhallas"],
     displayLanguageSelection:["selected display-language-options","display-language-options","display-language-options","display-language-options"]
   }}
@@ -60,7 +62,8 @@ export default {
   background: $bg-dark;
 }
 #header-name{
-  padding: 5px;
+  padding-top: 7px;
+  padding-left: 15px;
   display:block;
   margin-top:auto;
   // padding-top:2px;
