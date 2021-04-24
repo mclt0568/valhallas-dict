@@ -31,5 +31,6 @@ export default {
   font-family: "Roboto", sans-serif;
   min-height: calc(100vh - 3.5rem);
   background-color: $ui-01;
+  background-image: url("assets/grid.png");
 }
 </style>
