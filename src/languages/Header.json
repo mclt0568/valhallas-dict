@@ -1,0 +1,46 @@
+{
+	"eng":{
+		"search_placeholder": "Enter a Word",
+		"search_language_placeholder": "Select a language",
+		"search_language_options": [
+			"Valhallas to English",
+			"Valhallas to Traditional Chinese",
+			"Valhallas to Simplified Chinese",
+			"Chinese to Valhallas",
+			"English to Valhallas"
+		]
+	},
+	"zhtw":{
+		"search_placeholder": "搜尋單詞",
+		"search_language_placeholder": "請選擇搜尋類型",
+		"search_language_options": [
+			"維赫語 - 英文",
+			"維赫語 - 繁體中文",
+			"維赫語 - 簡體中文",
+			"中文 - 維赫語",
+			"英文 - 維赫語"
+		]
+	},
+	"zhcn":{
+		"search_placeholder": "单词查询",
+		"search_language_placeholder": "请选择查询模式",
+		"search_language_options": [
+			"维赫语 - 英文",
+			"维赫语 - 繁体中文",
+			"维赫语 - 简体中文",
+			"中文 - 维赫语",
+			"英文 - 维赫语"
+		]
+	},
+	"vel":{
+		"search_placeholder": "Ti'as Ahasforl Vorba",
+		"search_language_placeholder": "Ti'as Ëlegaforl Moda",
+		"search_language_options": [
+			"LingaAnka LingaVëlhëlkuhas",
+			"Trlatakas LingaSisa LingaVëlhëlkuhas",
+			"Morlatakas LingaSisa LingaVëlhëlkuhas",
+			"LingaVëlhëlka LingaSisuhas",
+			"LingaVëlhëlka LingaAnkuhas"
+		]
+	}
+}

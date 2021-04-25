@@ -6,16 +6,15 @@
       <div id="foreign-names">Dictionary of the Valhallas Language 維赫語詞典</div>
     </cv-header-name>
     <cv-header-nav>
-      <!-- <cv-header-menu-item href="/repos">Repositories</cv-header-menu-item> -->
       <cv-text-input
         id="word-search"
         invalidText=""
-        :placeholder=search_placeholder
+        :placeholder=display_language_content.search_placeholder
       />
       <cv-dropdown
-        :placeholder=search_language_placeholder
+        :placeholder=display_language_content.search_language_placeholder
         id="search-language-options"
-        :items=search_language_options
+        :items=display_language_content.search_language_options
         titleText="awa"
       />
     </cv-header-nav>
@@ -29,17 +28,30 @@
 </template>
 
 <script>
+import language_contents from "@/languages/Header.json";
+
 export default {
   name: 'Header',
   props: {},
   data(){return{
-    search_placeholder: "Enter a Word",
-    search_language_placeholder: "Select a language",
-    search_language_options: ["Valhallas to English","Valhallas to Traditional Chinese","Valhallas to Simplified Chinese","Chinese to Valhallas","English to Valhallas"],
+    // search_placeholder: "Enter a Word",
+    // search_language_placeholder: "Select a language",
+    // search_language_options: ["Valhallas to English","Valhallas to Traditional Chinese","Valhallas to Simplified Chinese","Chinese to Valhallas","English to Valhallas"],
+    display_language_content: {
+		"search_placeholder": "Enter a Word",
+		"search_language_placeholder": "Select a language",
+		"search_language_options": [
+			"Valhallas to English",
+			"Valhallas to Traditional Chinese",
+			"Valhallas to Simplified Chinese",
+			"Chinese to Valhallas",
+			"English to Valhallas"
+		]
+	},
     display_language_selection:["","","",""]
   }},
-  mounted(){
-    this.updateDisplayLanguage();
+  async mounted(){
+    await this.updateDisplayLanguage();
   },
   methods:{
     onSetLangClick(event){
@@ -52,9 +64,9 @@ export default {
       const lang_code = id_langcode_ref[event.target.id];
       this.setDisplayLanguage(lang_code);
       this.updateDisplayLanguage();
-      window.location.reload();
     },
-    updateDisplayLanguage(){
+    async updateDisplayLanguage(){
+      // Update Selection
       var display_language = localStorage.getItem("displayLang") || "eng";
       switch(display_language){
         case "eng":
@@ -70,6 +82,8 @@ export default {
           this.display_language_selection = ["","","","selected"];
         break;
       }
+
+      this.display_language_content = language_contents[display_language];
     },
     setDisplayLanguage(lang){
       localStorage.setItem("displayLang",lang);
