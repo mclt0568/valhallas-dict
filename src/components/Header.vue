@@ -10,20 +10,20 @@
       <cv-text-input
         id="word-search"
         invalidText=""
-        :placeholder=searchPlaceholder
+        :placeholder=search_placeholder
       />
       <cv-dropdown
-        :placeholder=searchLanguageOptionPlaceholder
+        :placeholder=search_language_placeholder
         id="search-language-options"
-        :items=searchLanguageOptions
+        :items=search_language_options
         titleText="awa"
       />
     </cv-header-nav>
     <template slot="header-global">
-      <cv-header-global-action :class=displayLanguageSelection[0] id="display-language-eng">ENG</cv-header-global-action>
-      <cv-header-global-action :class=displayLanguageSelection[1] id="display-language-zhtw">繁中</cv-header-global-action>
-      <cv-header-global-action :class=displayLanguageSelection[2] id="display-language-zhcn">简中</cv-header-global-action>
-      <cv-header-global-action :class=displayLanguageSelection[3] id="display-language-vel">VËL</cv-header-global-action>
+      <cv-header-global-action class="display-language-options" :class=display_language_selection[0] @click=onSetLangClick($event) id="display-language-eng">ENG</cv-header-global-action>
+      <cv-header-global-action class="display-language-options" :class=display_language_selection[1] @click=onSetLangClick($event) id="display-language-zhtw">繁中</cv-header-global-action>
+      <cv-header-global-action class="display-language-options" :class=display_language_selection[2] @click=onSetLangClick($event) id="display-language-zhcn">简中</cv-header-global-action>
+      <cv-header-global-action class="display-language-options" :class=display_language_selection[3] @click=onSetLangClick($event) id="display-language-vel">VËL</cv-header-global-action>
     </template>
   </cv-header>
 </template>
@@ -33,11 +33,48 @@ export default {
   name: 'Header',
   props: {},
   data(){return{
-    searchPlaceholder: "Enter a Word",
-    searchLanguageOptionPlaceholder: "Select a language",
-    searchLanguageOptions: ["Valhallas to English","Valhallas to Traditional Chinese","Valhallas to Simplified Chinese","Chinese to Valhallas","English to Valhallas"],
-    displayLanguageSelection:["selected display-language-options","display-language-options","display-language-options","display-language-options"]
-  }}
+    search_placeholder: "Enter a Word",
+    search_language_placeholder: "Select a language",
+    search_language_options: ["Valhallas to English","Valhallas to Traditional Chinese","Valhallas to Simplified Chinese","Chinese to Valhallas","English to Valhallas"],
+    display_language_selection:["","","",""]
+  }},
+  mounted(){
+    this.updateDisplayLanguage();
+  },
+  methods:{
+    onSetLangClick(event){
+      const id_langcode_ref = {
+        "display-language-eng":"eng",
+        "display-language-zhtw":"zhtw",
+        "display-language-zhcn":"zhcn",
+        "display-language-vel":"vel",
+      };
+      const lang_code = id_langcode_ref[event.target.id];
+      this.setDisplayLanguage(lang_code);
+      this.updateDisplayLanguage();
+      window.location.reload();
+    },
+    updateDisplayLanguage(){
+      var display_language = localStorage.getItem("displayLang") || "eng";
+      switch(display_language){
+        case "eng":
+          this.display_language_selection = ["selected","","",""];
+        break;
+        case "zhtw":
+          this.display_language_selection = ["","selected","",""];
+        break;
+        case "zhcn":
+          this.display_language_selection = ["","","selected",""];
+        break;
+        case "vel":
+          this.display_language_selection = ["","","","selected"];
+        break;
+      }
+    },
+    setDisplayLanguage(lang){
+      localStorage.setItem("displayLang",lang);
+    }
+  }
 };
 </script>
 
