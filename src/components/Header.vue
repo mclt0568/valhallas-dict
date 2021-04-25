@@ -13,11 +13,9 @@
         :placeholder=searchPlaceholder
       />
       <cv-dropdown
-        ariaLabel="Dropdown"
         :placeholder=searchLanguageOptionPlaceholder
         id="search-language-options"
         :items=searchLanguageOptions
-        
         titleText="awa"
       />
     </cv-header-nav>
