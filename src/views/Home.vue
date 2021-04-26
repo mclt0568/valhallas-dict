@@ -6,16 +6,16 @@
         <cv-column :sm="4" :md="3" :lg="3">
           <div class="cv-grid-story__preview-col full">
             <div class="button-column full">
-              <ButtonWrapper type="main">{{display_language_content["menu-buttons"].list}}<Catalog32/></ButtonWrapper>
+              <ButtonWrapper type="main"><Catalog24/>{{display_language_content["menu-buttons"].list}}</ButtonWrapper>
             </div>
           </div>
         </cv-column>
         <cv-column :sm="4" :md="3" :lg="3">
           <div class="cv-grid-story__preview-col">
             <div class="button-column sub">
-              <ButtonWrapper>{{display_language_content["menu-buttons"].bookmark}}<Bookmark32/></ButtonWrapper>
-              <ButtonWrapper>{{display_language_content["menu-buttons"].learn}}<Idea32/></ButtonWrapper>
-              <ButtonWrapper>{{display_language_content["menu-buttons"].about}}<Information32/></ButtonWrapper>
+              <ButtonWrapper><Bookmark24/>{{display_language_content["menu-buttons"].bookmark}}</ButtonWrapper>
+              <ButtonWrapper><Idea24/>{{display_language_content["menu-buttons"].learn}}</ButtonWrapper>
+              <ButtonWrapper><Information24/>{{display_language_content["menu-buttons"].about}}</ButtonWrapper>
             </div>
           </div>
         </cv-column>
@@ -28,17 +28,17 @@
 <script>
 // @ is an alias to /src
 import ButtonWrapper from "@/views/Home/ButtonWrapper";
-import {Bookmark32, Catalog32, Idea32, Information32} from "@carbon/icons-vue";
+import {Bookmark24, Catalog24, Idea24, Information24} from "@carbon/icons-vue";
 import language_contents from "@/languages/Home.json";
 
 export default {
   name: 'Home',
   components: {
     ButtonWrapper,
-    Catalog32,
-    Information32,
-    Idea32,
-    Bookmark32
+    Catalog24,
+    Information24,
+    Idea24,
+    Bookmark24
   },
   data(){return{
     display_language_content:{
