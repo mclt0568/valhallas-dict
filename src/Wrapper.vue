@@ -34,3 +34,21 @@ export default {
   background-image: url("assets/grid.png");
 }
 </style>
+<style lang="scss">
+@media only screen and (max-width: 672px) {
+  .desktop-view-page{
+    display:none;
+  }
+  .mobile-view-page{
+    display:unset;
+  }
+}
+@media only screen and (min-width: 672px) {
+  .desktop-view-page{
+    display:unset;
+  }
+  .mobile-view-page{
+    display:none;
+  }
+}
+</style>
