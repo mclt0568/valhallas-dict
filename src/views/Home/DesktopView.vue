@@ -1,5 +1,5 @@
 <template>
-  <div id="home" class="desktop-view-page">
+  <div id="home" class="bp-medium">
     <cv-grid kind="condensed" id="menu-grid">
       <cv-row>
         <cv-column :sm="0" :md="1" :lg="3"></cv-column>
