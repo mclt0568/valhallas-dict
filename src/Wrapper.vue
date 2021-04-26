@@ -1,6 +1,6 @@
 <template>
 <div id="app">
-  <Header/>
+  <Header class="desktop-view-page"/>
   <div id="main-stage">
       <router-view/>
     </div>
@@ -37,7 +37,7 @@ export default {
 <style lang="scss">
 @media only screen and (max-width: 672px) {
   .desktop-view-page{
-    display:none;
+    display:none !important;
   }
   .mobile-view-page{
     display:unset;
@@ -48,7 +48,7 @@ export default {
     display:unset;
   }
   .mobile-view-page{
-    display:none;
+    display:none !important;
   }
 }
 </style>
