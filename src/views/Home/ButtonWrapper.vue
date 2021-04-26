@@ -25,7 +25,9 @@ export default {
     max-width: none;
     width:100%;
     height:100%;
+    padding: 15px;
   }
+  
 }
 .main button{
   vertical-align: bottom;
