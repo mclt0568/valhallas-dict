@@ -64,6 +64,7 @@ export default {
       const lang_code = id_langcode_ref[event.target.id];
       this.setDisplayLanguage(lang_code);
       this.updateDisplayLanguage();
+      window.location.reload();
     },
     async updateDisplayLanguage(){
       // Update Selection

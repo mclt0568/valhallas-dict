@@ -1,0 +1,34 @@
+{
+	"eng":{
+		"menu-buttons":{
+			"list":"List of Valhallas Words",
+			"bookmark":"Bookmarked Pages",
+			"learn":"Learn Valhallas Language",
+			"about":"About"
+		}
+	},
+	"zhtw":{
+		"menu-buttons":{
+			"list":"維赫語詞彙表",
+			"bookmark":"書籤列",
+			"learn":"學習維赫語",
+			"about":"關於"
+		}
+	},
+	"zhcn":{
+		"menu-buttons":{
+			"list":"维赫语词汇表",
+			"bookmark":"查看书签",
+			"learn":"学习维赫语",
+			"about":"关于"
+		}
+	},
+	"vel":{
+		"menu-buttons":{
+			"list":"Vorkaza Mulindëksa",
+			"bookmark":"Nisa Muleleshamarka",
+			"learn":"Dishforl Nisvi Linga",
+			"about":"The Omulinka"
+		}
+	}
+}

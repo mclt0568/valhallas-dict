@@ -6,16 +6,16 @@
         <cv-column :sm="4" :md="3" :lg="3">
           <div class="cv-grid-story__preview-col full">
             <div class="button-column full">
-              <ButtonWrapper type="main">{{texts["list"]}}<Catalog32/></ButtonWrapper>
+              <ButtonWrapper type="main">{{display_language_content["menu-buttons"].list}}<Catalog32/></ButtonWrapper>
             </div>
           </div>
         </cv-column>
         <cv-column :sm="4" :md="3" :lg="3">
           <div class="cv-grid-story__preview-col">
             <div class="button-column sub">
-              <ButtonWrapper>{{texts["bookmark"]}}<Bookmark32/></ButtonWrapper>
-              <ButtonWrapper>{{texts["learn"]}}<Idea32/></ButtonWrapper>
-              <ButtonWrapper>{{texts["about"]}}<Information32/></ButtonWrapper>
+              <ButtonWrapper>{{display_language_content["menu-buttons"].bookmark}}<Bookmark32/></ButtonWrapper>
+              <ButtonWrapper>{{display_language_content["menu-buttons"].learn}}<Idea32/></ButtonWrapper>
+              <ButtonWrapper>{{display_language_content["menu-buttons"].about}}<Information32/></ButtonWrapper>
             </div>
           </div>
         </cv-column>
@@ -29,6 +29,7 @@
 // @ is an alias to /src
 import ButtonWrapper from "@/views/Home/ButtonWrapper";
 import {Bookmark32, Catalog32, Idea32, Information32} from "@carbon/icons-vue";
+import language_contents from "@/languages/Home.json";
 
 export default {
   name: 'Home',
@@ -40,13 +41,24 @@ export default {
     Bookmark32
   },
   data(){return{
-    texts:{
-      "list":"List of Valhallas Words",
-      "bookmark":"Bookmarked Pages",
-      "learn":"Learn Valhallas Language",
-      "about":"About",
+    display_language_content:{
+      "menu-buttons":{
+        "list":"List of Valhallas Words",
+        "bookmark":"Bookmarked Pages",
+        "learn":"Learn Valhallas Language",
+        "about":"About"
+      }
     }
-  }}
+  }},
+  mounted(){
+    this.updateDisplayLanguage();
+  },
+  methods:{
+    updateDisplayLanguage(){
+      var display_language = localStorage.getItem("displayLang") || "eng";
+      this.display_language_content = language_contents[display_language];
+    }
+  }
 }
 </script>
 
